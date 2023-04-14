@@ -4,6 +4,7 @@ namespace App\entities;
 
 class User
 {
+    private int $id;
     private string $username;
     private string $email;
     private int $rolesMask;
@@ -19,8 +20,9 @@ class User
      * @param bool $verified
      * @param bool $resettable
      */
-    public function __construct(string $username, string $email, int $rolesMask, bool $status, bool $verified, bool $resettable)
+    public function __construct(int $id, string $username, string $email, int $rolesMask, bool $status, bool $verified, bool $resettable)
     {
+        $this->id = $id;
         $this->username = $username;
         $this->email = $email;
         $this->rolesMask = $rolesMask;
@@ -28,6 +30,15 @@ class User
         $this->verified = $verified;
         $this->resettable = $resettable;
     }
+
+    /**
+     * @return int
+     */
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
 
     /**
      * @return string

@@ -101,7 +101,7 @@ class QueryBuilder
         $delete = $this->queryFactory->newDelete();
 
         $delete
-            ->from($table)
+        ->from($table)
             ->where('id = :id')
             ->bindValue('id', $id);
 
